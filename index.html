@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seconde SNT : récapitulatif des cours et activités</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- CodeMirror pour l'éditeur de code Python avec numéros de ligne -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/dracula.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/python/python.min.js"></script>
+    <!-- Configuration MathJax -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <!-- Pyodide pour l'exécution Python côté client -->
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.26.2/full/pyodide.js"></script>
+</head>
+<body>
+    <header class="glass-header">
+        <div class="header-content">
+            <div class="header-top">
+                <span class="badge">SNT • Seconde</span>
+                <span id="pyodide-status" class="status-loading">⏳ Initialisation de Python...</span>
+            </div>
+            <h1>Seconde SNT : récapitulatif des cours et activités</h1>
+            <p class="subtitle">Fiches de synthèse, panorama du programme, QCM et initiation à Python 3</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Vue 1 : Grille de cartes indépendantes pour chaque séance -->
+        <section id="sessions-grid-view" class="sessions-grid">
+            <!-- Cartes générées dynamiquement par app.js -->
+        </section>
+
+        <!-- Vue 2 : Détail d'une séance (masquée par défaut) -->
+        <section id="session-detail-view" class="hidden">
+            <button id="back-btn" class="btn-back">← Retour aux séances</button>
+
+            <div id="course-container" class="glass-panel">
+                <!-- Contenu du cours, QCM et exercices de la séance active -->
+            </div>
+        </section>
+    </main>
+
+    <script src="python-ide.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
